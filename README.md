@@ -31,14 +31,6 @@
 
 ---
 
-## 📈 GitHub Stats
-
-![My GitHub Stats](https://github-readme-stats.vercel.app/api?username=YashJangid-Boss&show_icons=true&theme=radical)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=YashJangid-Boss&layout=compact&theme=radical)
-
----
-
 ## 📬 Let’s Connect
 
 - 📧 Email: yashjangid.in@gmail.com *(example – update if needed)*  
