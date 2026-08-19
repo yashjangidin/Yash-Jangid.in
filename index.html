@@ -1,10 +1,11 @@
 <!doctype html>
 <!-- Made in Framer · framer.com ✨ -->
 <!-- Published Dec 29, 2025, 10:15 AM UTC -->
-<html lang="en" data-redirect-timezone="1" style="scroll-behavior:smooth">
+<html lang="en" data-redirect-timezone="1">
 
 <!-- Mirrored from numerous-nonogon-655471.framer.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 29 Dec 2025 10:28:00 GMT -->
 <head>
+    <link rel="stylesheet" href="vendor/lenis/lenis.css">
     <meta charset="utf-8">
     
     
@@ -167,9 +168,24 @@
     
     <!-- End of bodyEnd -->
 
+<script src="vendor/lenis/lenis.min.js"></script>
 <script>
 (function () {
   "use strict";
+
+  var lenis = new Lenis({
+    autoRaf: false,
+    smoothWheel: true,
+    syncTouch: false,
+    anchors: true
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
   function setupAvatarFlip() {
     var wraps = document.querySelectorAll(".framer-o0zby");
     var pairs = [];
@@ -179,9 +195,7 @@
     });
     if (!pairs.length) return;
 
-    var ticking = false;
     function update() {
-      ticking = false;
       var vh = window.innerHeight;
       pairs.forEach(function (p) {
         var rect = p.wrap.getBoundingClientRect();
@@ -192,38 +206,16 @@
         p.card.style.transform = "perspective(2000px) rotateX(" + (progress * 180) + "deg)";
       });
     }
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(update);
-        ticking = true;
-      }
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    lenis.on("scroll", update);
     update();
-  }
-
-  function setupSmoothAnchors() {
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest && e.target.closest('a[href^="#"]');
-      if (!a) return;
-      var id = a.getAttribute("href").slice(1);
-      if (!id) return;
-      var target = document.getElementById(id);
-      if (!target) return;
-      e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
   }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
       setupAvatarFlip();
-      setupSmoothAnchors();
     });
   } else {
     setupAvatarFlip();
-    setupSmoothAnchors();
   }
 })();
 </script>
