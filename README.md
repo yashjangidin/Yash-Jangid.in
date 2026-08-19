@@ -33,7 +33,7 @@
 
 ## 📬 Let’s Connect
 
-- 📧 Email: yashjangid.in@gmail.com *(example – update if needed)*  
+- 📧 Email: yashjangid.in@gmail.com 
 - 📷 Instagram: [@yashjangid](https://instagram.com/yaashshaarma)  
 - 🔗 LinkedIn: [linkedin.com/in/yashjangid](https://linkedin.com/in/yashjangidin)  
 - 🌐 Portfolio: Coming Soon...
